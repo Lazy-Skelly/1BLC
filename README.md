@@ -39,7 +39,7 @@ not the best but respectable
 the process takes 2770 sec (~46 min) approaximately a 20% increase in speed but in the otherside there was a hge increase in ram usage due to the buffer being filled faster than the processing speed of the decoder thread 1300mb of ram was the maximum and the whole program was going from 1100mb to 1300 and back in 20 sec interval in which we can conclude that was the time it took the decoder to finish its internal buffer and copy the external one.
 
 ## THIRD ITERATION
-[** 2 threads 2 furious **](3rd%20try/main.cpp)
+[**2 threads 2 furious**](3rd%20try/main.cpp)
 
 not much has changed from the previous iteration really while i added another thread since the one decoder thread couldnt keep up with the reader and made the reader sleep for 1 sec instead of 2 once the buffer is full.
 this meant that in case the buffer was copied to the decoder thread itll take less time for the reader thread to catch on that and start the process again
@@ -49,7 +49,7 @@ it took 1731sec (~29 min) a whole 50% increase from the first try and 36% from t
 that means that the data is being processed faster but the reader speed is still higher than the decoder.
 
 ## FOURTH ITERATION
-[** I remembered the basics duh **](4th%20try/main.cpp)
+[**I remembered the basics**](4th%20try/main.cpp)
 
 in this iteration i added some safety measure and refined the control to avoid deadlock when using multiple threads which happend while testing and it was paingful to see it when it stopepd.
 
